@@ -61,7 +61,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                user.management.solid.javausermanagementsolid/user.management.solid.javausermanagementsolid.HelloApplication
+                                user.management.solid.javausermanagementsolid/com.javafx.user.management.HelloApplication
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>

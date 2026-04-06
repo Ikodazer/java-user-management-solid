@@ -1,4 +1,4 @@
-package user.management.solid.javausermanagementsolid;
+package com.javafx.user.management;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

@@ -1,4 +1,4 @@
-package user.management.solid.javausermanagementsolid;
+package com.javafx.user.management;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
