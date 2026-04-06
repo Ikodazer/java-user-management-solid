@@ -7,8 +7,14 @@ import java.util.List;
 
 public class Database {
     private final List<User> database = new ArrayList<>();
+    private int idCounter = 0;
 
     public List<User> getUsers() {
         return database;
-    };
+    }
+
+    public int getNextId() {
+        idCounter++;
+        return idCounter;
+    }
 }
