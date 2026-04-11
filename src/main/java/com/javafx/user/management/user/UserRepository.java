@@ -7,8 +7,8 @@ public interface UserRepository {
     Optional<User> findByUsername(String username);
     Optional<User> findById(int id);
 
-    Collection<User> findAllUsers();
+    Collection<User> findAllActiveUsers();
     void save(User user);
-    void delete(User user);
+    void deactivate(User user);
     void update(User user);
 }

@@ -13,8 +13,7 @@ public class Database {
         return List.copyOf(database);
     }
 
-    public void insert (User user) {
-        user.setActive(true);
+    public void insert(User user) {
         database.add(user);
     }
 

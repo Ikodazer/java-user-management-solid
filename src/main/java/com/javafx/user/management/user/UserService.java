@@ -48,7 +48,6 @@ public class UserService {
         }
 
         String hashedPassword = passwordHasher.hash(password);
-
         User newUser = new User(username, hashedPassword, email);
         userRepository.save(newUser);
     }
@@ -100,11 +99,11 @@ public class UserService {
         userRepository.update(user);
     }
 
-    public void delete(int id) {
+    public void deactivate(int id) {
 
         User user = userRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("User not found"));
 
-        userRepository.delete(user);
+        userRepository.deactivate(user);
     }
 }
