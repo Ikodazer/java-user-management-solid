@@ -9,11 +9,16 @@ public class Database {
     private final List<User> database = new ArrayList<>();
     private int idCounter = 0;
 
-    public List<User> getUsers() {
-        return database;
+    public List<User> selectAll() {
+        return List.copyOf(database);
     }
 
-    public int getNextId() {
+    public void insert (User user) {
+        user.setActive(true);
+        database.add(user);
+    }
+
+    public int generateId() {
         idCounter++;
         return idCounter;
     }
