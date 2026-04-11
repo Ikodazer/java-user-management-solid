@@ -26,7 +26,7 @@ public class ViewLoader {
                 return new RegisterController(userService, this);
             }
             if (controllerClass == LoginController.class) {
-                return new LoginController(this);
+                return new LoginController(userService, this);
             }
 
             try {

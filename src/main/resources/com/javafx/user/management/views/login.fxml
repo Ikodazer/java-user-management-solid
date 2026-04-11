@@ -20,8 +20,8 @@
 
                     <Label style="-fx-padding: 0 10 0 0;"
                            GridPane.columnIndex="0" GridPane.rowIndex="1">Password: </Label>
-                    <TextField fx:id="password"
-                               GridPane.columnIndex="1" GridPane.rowIndex="1"> </TextField>
+                    <PasswordField fx:id="password"
+                                   GridPane.columnIndex="1" GridPane.rowIndex="1"> </PasswordField>
                 </GridPane>
                 <Button onAction="#login">Login</Button>
                 <Pane style="-fx-padding: 10 0 0 0"> </Pane>
