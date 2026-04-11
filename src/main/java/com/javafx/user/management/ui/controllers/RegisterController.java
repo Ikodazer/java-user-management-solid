@@ -1,33 +1,36 @@
 package com.javafx.user.management.ui.controllers;
 
-import com.javafx.user.management.database.Database;
-import com.javafx.user.management.security.PasswordHasher;
-import com.javafx.user.management.user.MemoryUserRepository;
+import com.javafx.user.management.app.ViewLoader;
 import com.javafx.user.management.user.UserService;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
+import javafx.fxml.FXML;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.Objects;
 
 public class RegisterController {
-    public TextField username;
-    public TextField email;
-    public TextField password;
-    public Label result;
+    private final UserService service;
+    private final ViewLoader viewLoader;
 
-    public Database database = new Database();
-    public MemoryUserRepository repository = new MemoryUserRepository(database);
-    public PasswordHasher passwordHasher = new PasswordHasher();
-    public UserService service = new UserService(repository, passwordHasher);
+    @FXML
+    private TextField username;
+    @FXML
+    private TextField email;
+    @FXML
+    private TextField password;
+    @FXML
+    private Label result;
 
-    public void register (ActionEvent actionEvent) {
+    public RegisterController(UserService service, ViewLoader viewLoader) {
+        this.service = service;
+        this.viewLoader = viewLoader;
+    }
+
+    @FXML
+    public void register(ActionEvent actionEvent) {
         try {
             service.register(username.getText(), password.getText(), email.getText());
             result.setText("User registered successfully!");
@@ -36,11 +39,9 @@ public class RegisterController {
         }
     }
 
-    public void changeToLogin (ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/javafx/user/management/views/login.fxml")));
+    @FXML
+    public void changeToLogin(ActionEvent actionEvent) throws IOException {
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        viewLoader.show(stage, "/com/javafx/user/management/views/login.fxml");
     }
 }
