@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.javafx.user.management.ui.controllers.LoginController"
+            prefHeight="400.0" prefWidth="600.0" alignment="CENTER">
+            <children>
+                <Label style="-fx-font-size: 20; -fx-font-weight: bolder">Access to your account</Label>
+                <GridPane alignment="CENTER" style="-fx-padding: 20 0 10 0" vgap="5.0">
+                    <Label style="-fx-padding: 0 10 0 0;"
+                           GridPane.columnIndex="0" GridPane.rowIndex="0">Username: </Label>
+                    <TextField fx:id="username"
+                               GridPane.columnIndex="1" GridPane.rowIndex="0"> </TextField>
+
+                    <Label style="-fx-padding: 0 10 0 0;"
+                           GridPane.columnIndex="0" GridPane.rowIndex="1">Password: </Label>
+                    <TextField fx:id="password"
+                               GridPane.columnIndex="1" GridPane.rowIndex="1"> </TextField>
+                </GridPane>
+                <Button onAction="#login">Login</Button>
+                <Pane style="-fx-padding: 10 0 0 0"> </Pane>
+                <Hyperlink onAction="#changeToRegister">I don't have an account</Hyperlink>
+                <Label fx:id="result" style="-fx-padding: 15 0 0 0"> </Label>
+            </children>
+</VBox>
